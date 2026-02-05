@@ -1,19 +1,23 @@
- import { Container } from "./Container";
- import { SectionHeading } from "./SectionHeading";
- import { Button } from "@/components/ui/button";
- import gallery2 from "@/assets/gallery-2.jpg";
- import gallery3 from "@/assets/gallery-3.jpg";
- 
- const floorPlans = [
-   { type: "2 BHK (Large)", image: gallery2 },
-   { type: "3 BHK", image: gallery3 },
-   { type: "3.5 BHK", image: gallery2 },
-   { type: "4 BHK", image: gallery3 },
- ];
- 
- export function FloorPlansSection() {
-   return (
-     <section className="py-16 md:py-24 bg-primary">
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+import { Button } from "@/components/ui/button";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+
+const floorPlans = [
+  { type: "2 BHK (Large)", image: gallery2 },
+  { type: "3 BHK", image: gallery3 },
+  { type: "3.5 BHK", image: gallery2 },
+  { type: "4 BHK", image: gallery3 },
+];
+
+interface FloorPlansSectionProps {
+  onViewPlan: (planType: string) => void;
+}
+
+export function FloorPlansSection({ onViewPlan }: FloorPlansSectionProps) {
+  return (
+    <section id="floor-plans" className="py-16 md:py-24 bg-primary">
        <Container>
          <SectionHeading
            title="Floor Plans"
@@ -46,6 +50,7 @@
                  <Button
                    variant="outline"
                    className="w-full border-foreground text-foreground hover:bg-foreground hover:text-primary-foreground rounded-full"
+                  onClick={() => onViewPlan(plan.type)}
                  >
                    View Plan
                  </Button>

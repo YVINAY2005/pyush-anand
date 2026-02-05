@@ -1,10 +1,10 @@
- import { Container } from "./Container";
- import { SectionHeading } from "./SectionHeading";
- import aboutImage from "@/assets/about-image.jpg";
- 
- export function AboutSection() {
-   return (
-     <section className="py-16 md:py-24 bg-background">
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+import aboutImage from "@/assets/about-image.jpg";
+
+export function AboutSection() {
+  return (
+    <section id="about" className="py-16 md:py-24 bg-background">
        <Container>
          <SectionHeading
            title="About Mahindra Blossom"

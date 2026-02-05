@@ -1,10 +1,14 @@
- import { Container } from "./Container";
- import heroBuilding from "@/assets/hero-building.jpg";
- import { Button } from "@/components/ui/button";
- 
- export function HeroSection() {
+import { Container } from "./Container";
+import heroBuilding from "@/assets/hero-building.jpg";
+import { Button } from "@/components/ui/button";
+
+interface HeroSectionProps {
+   onScheduleVisit: () => void;
+}
+
+export function HeroSection({ onScheduleVisit }: HeroSectionProps) {
    return (
-     <section className="relative bg-mahindra-dark min-h-screen pt-20">
+     <section id="hero" className="relative bg-mahindra-dark min-h-screen pt-20">
        <Container className="py-16 md:py-24">
          <div className="grid lg:grid-cols-2 gap-12 items-center">
            {/* Left content */}
@@ -31,7 +35,11 @@
              </ul>
              
              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+               <Button
+                 size="lg"
+                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                 onClick={onScheduleVisit}
+               >
                  Schedule a Visit
                </Button>
                <div className="bg-primary/20 border border-primary rounded-lg px-6 py-3 text-center">
@@ -65,4 +73,4 @@
        </Container>
      </section>
    );
- }
+}

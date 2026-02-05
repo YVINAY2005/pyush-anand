@@ -1,19 +1,19 @@
- import { Container } from "./Container";
- import { SectionHeading } from "./SectionHeading";
- import { FlowerBullet } from "./FlowerBullet";
- import locationMap from "@/assets/location-map.jpg";
- 
- const locationHighlights = [
-   "Abutting Hopefarm Channasandra Metro Station",
-   "Key terminals within 1.3km radius – Whitefield railway station and Hopefarm bus stop",
-   "Major IT parks within 2.5km radius – ITPL, new Google office",
-   "Social infrastructure within 3km – schools, colleges, hospitals, etc.",
-   "Kempegowda International Airport – 35 mins drive",
- ];
- 
- export function LocationSection() {
-   return (
-     <section className="py-16 md:py-24 bg-secondary">
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+import { FlowerBullet } from "./FlowerBullet";
+import locationMap from "@/assets/location-map.jpg";
+
+const locationHighlights = [
+  "Abutting Hopefarm Channasandra Metro Station",
+  "Key terminals within 1.3km radius – Whitefield railway station and Hopefarm bus stop",
+  "Major IT parks within 2.5km radius – ITPL, new Google office",
+  "Social infrastructure within 3km – schools, colleges, hospitals, etc.",
+  "Kempegowda International Airport – 35 mins drive",
+];
+
+export function LocationSection() {
+  return (
+    <section id="location" className="py-16 md:py-24 bg-secondary">
        <Container>
          <SectionHeading
            title="A Perfect Location"

@@ -118,3 +118,11 @@
     text-wrap: balance;
   }
 }
+
+/* WhatsApp brand color */
+.whatsapp-green {
+  background-color: #25D366;
+}
+.whatsapp-green:hover {
+  background-color: #1da851;
+}

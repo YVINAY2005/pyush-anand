@@ -1,16 +1,20 @@
- import { Container } from "./Container";
- import { SectionHeading } from "./SectionHeading";
- import { Button } from "@/components/ui/button";
- 
- const pricingData = [
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+import { Button } from "@/components/ui/button";
+
+const pricingData = [
    { type: "2 BHK", size: "1,200 - 1,350 Sq.Ft.", price: "₹1.25 Cr*" },
    { type: "3 BHK", size: "1,550 - 1,750 Sq.Ft.", price: "₹1.65 Cr*" },
    { type: "4 BHK", size: "2,100 - 2,400 Sq.Ft.", price: "₹2.25 Cr*" },
- ];
- 
- export function PricingSection() {
-   return (
-     <section className="py-16 md:py-24 bg-primary">
+];
+
+interface PricingSectionProps {
+   onViewPlan: (planType: string) => void;
+}
+
+export function PricingSection({ onViewPlan }: PricingSectionProps) {
+  return (
+    <section id="pricing" className="py-16 md:py-24 bg-primary">
        <Container>
          <SectionHeading
            title="Pricing"
@@ -33,6 +37,7 @@
                <Button
                  variant="outline"
                  className="w-full border-foreground text-foreground hover:bg-foreground hover:text-primary-foreground rounded-full"
+                onClick={() => onViewPlan(item.type)}
                >
                  View Plan
                </Button>

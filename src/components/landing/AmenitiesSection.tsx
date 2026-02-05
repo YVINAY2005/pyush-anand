@@ -1,20 +1,20 @@
- import { Container } from "./Container";
- import { SectionHeading } from "./SectionHeading";
- import amenityPool from "@/assets/amenity-pool.jpg";
- import amenityGym from "@/assets/amenity-gym.jpg";
- import gallery1 from "@/assets/gallery-1.jpg";
- import gallery4 from "@/assets/gallery-4.jpg";
- 
- const amenities = [
-   { image: amenityPool, title: "Swimming Pool" },
-   { image: amenityGym, title: "Modern Gymnasium" },
-   { image: gallery1, title: "Landscaped Gardens" },
-   { image: gallery4, title: "Sports Facilities" },
- ];
- 
- export function AmenitiesSection() {
-   return (
-     <section className="py-16 md:py-24 bg-background">
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+import amenityPool from "@/assets/amenity-pool.jpg";
+import amenityGym from "@/assets/amenity-gym.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+
+const amenities = [
+  { image: amenityPool, title: "Swimming Pool" },
+  { image: amenityGym, title: "Modern Gymnasium" },
+  { image: gallery1, title: "Landscaped Gardens" },
+  { image: gallery4, title: "Sports Facilities" },
+];
+
+export function AmenitiesSection() {
+  return (
+    <section id="amenities" className="py-16 md:py-24 bg-background">
        <Container>
          <SectionHeading
            title="World-Class Amenities"
