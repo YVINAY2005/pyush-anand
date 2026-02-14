@@ -24,7 +24,14 @@ export function Header({ onContactClick }: HeaderProps) {
      setMobileMenuOpen(false);
      const element = document.querySelector(href);
      if (element) {
-       element.scrollIntoView({ behavior: "smooth" });
+       const headerOffset = 80;
+       const elementPosition = element.getBoundingClientRect().top;
+       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+       window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+       });
      }
    };
 
@@ -33,7 +40,14 @@ export function Header({ onContactClick }: HeaderProps) {
        <Container className="py-4">
          <div className="flex items-center justify-between">
            {/* Logo */}
-           <a href="#" className="flex items-center gap-2">
+           <a 
+             href="#" 
+             className="flex items-center gap-2"
+             onClick={(e) => {
+               e.preventDefault();
+               window.scrollTo({ top: 0, behavior: "smooth" });
+             }}
+           >
              <span className="text-xl md:text-2xl font-serif font-bold text-primary-foreground">
                Mahindra <span className="text-primary">Blossom</span>
              </span>

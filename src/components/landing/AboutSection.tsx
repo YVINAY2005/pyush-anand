@@ -1,10 +1,11 @@
 import { Container } from "./Container";
 import { SectionHeading } from "./SectionHeading";
 import aboutImage from "@/assets/about-image.jpg";
+import { motion } from "framer-motion";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-background">
+    <section id="about" className="py-16 md:py-24 bg-background overflow-hidden">
        <Container>
          <SectionHeading
            title="About Mahindra Blossom"
@@ -12,7 +13,13 @@ export function AboutSection() {
          />
          
          <div className="grid lg:grid-cols-2 gap-12 items-center">
-           <div className="space-y-6">
+           <motion.div 
+             initial={{ opacity: 0, x: -30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="space-y-6"
+           >
              <p className="text-foreground leading-relaxed text-lg">
                Mahindra Blossom is an exquisite residential project located in the heart of Whitefield, 
                Bangalore. Spread across 9+ acres of lush greenery, this premium development offers 
@@ -29,10 +36,18 @@ export function AboutSection() {
                is crafted to elevate your lifestyle. From world-class amenities to vastu-compliant 
                designs, Mahindra Blossom is where your dreams blossom.
              </p>
-           </div>
+           </motion.div>
            
-           <div className="relative">
-             <img
+           <motion.div 
+             initial={{ opacity: 0, x: 30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="relative"
+           >
+             <motion.img
+               whileHover={{ scale: 1.02 }}
+               transition={{ duration: 0.4 }}
                src={aboutImage}
                alt="Mahindra Blossom Community"
                className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/3]"
@@ -40,7 +55,7 @@ export function AboutSection() {
                height={450}
                loading="lazy"
              />
-           </div>
+           </motion.div>
          </div>
        </Container>
      </section>

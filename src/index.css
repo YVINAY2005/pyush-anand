@@ -55,6 +55,10 @@
     --sidebar-ring: 354 79% 50%;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
